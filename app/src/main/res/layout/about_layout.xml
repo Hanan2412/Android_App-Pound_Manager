@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This Application is designed to help the volunteering efforts at Rishon Loves Animals to help adopt and take care of every animal present as efficiently as possible."
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        >
+
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" This app is not open source and isn't available to the public."
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="please do not share the app outside of Rishon loves animals."
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This app was donated to Rishon loves Animals"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dev_by"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+
+    </TextView>
+</LinearLayout>

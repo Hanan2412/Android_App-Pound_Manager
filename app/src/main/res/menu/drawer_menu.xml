@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/membership">
+        <menu>
+
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/viewProfile"
+                    android:title="@string/profile"
+                    android:icon="@drawable/ic_baseline_account_circle_24">
+
+                </item>
+                <item android:id="@+id/newMember"
+                    android:title="@string/new_member"
+                    android:icon="@drawable/ic_baseline_face_24"
+                    >
+
+                </item>
+                <item android:id="@+id/disconnect"
+                    android:title="@string/dc"
+                    android:icon="@drawable/ic_baseline_signal_cellular_no_sim_24">
+
+                </item>
+            </group>
+        </menu>
+    </item>
+    <item android:title="@string/arrivals">
+        <menu>
+            <item android:id="@+id/arriving"
+                android:title="@string/arriving"
+                android:checkable="true"
+                android:checked="true"
+                android:icon="@drawable/ic_baseline_work_24">
+
+            </item>
+            <item android:title="@string/arriving_list"
+                android:id="@+id/openList"
+                android:icon="@drawable/ic_baseline_list_24">
+
+            </item>
+        </menu>
+
+    </item>
+    <item android:title="@string/config" android:visible="true">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/settings"
+                    android:title="@string/settings"
+                    android:icon="@drawable/ic_baseline_settings_24">
+                </item>
+            </group>
+        </menu>
+    </item>
+
+    <item android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/dev_by"
+        android:checkable="false"
+        android:id="@+id/developed_by">
+
+    </item>
+</menu>

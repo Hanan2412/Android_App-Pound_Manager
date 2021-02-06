@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/looks">
+        <ListPreference
+            android:title="@string/show_on_screen"
+            android:summary="@string/number_of_cards"
+            android:key="list_preference"
+            android:entryValues="@array/list_values"
+            android:entries="@array/list_entries"/>
+
+        <SwitchPreference
+            android:title="Notifications"
+            android:key="notifications"
+            android:summaryOn="notifications will show"
+            android:summaryOff="notifications won't show"
+            android:defaultValue="true"
+            >
+
+        </SwitchPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Data and Privacy">
+        <SwitchPreference
+            android:title="Don't update automatically"
+            android:key="autoUpdate"
+            android:summaryOn="The app wont update the data until the users chooses to"
+            android:summaryOff="The app will update as new information is being available">
+        </SwitchPreference>
+        <SwitchPreference
+            android:title="Don't show in user List"
+            android:key="showInList"
+            android:summaryOff="You will appear in the user List for everyone to see"
+            android:summaryOn="You wont appear in the user List for everyone to see(still visible to admin)">
+        </SwitchPreference>
+        <CheckBoxPreference
+            android:title="Mark tasks as done automatically"
+            android:summaryOn="Tasks will be marked as done once 30 minutes have past since they begun"
+            android:summaryOff="Tasks will not be marked as done automatically"
+            android:key="autoDoneTask">
+
+        </CheckBoxPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/the_app">
+        <PreferenceScreen android:title="@string/about"
+            android:summary="@string/app_about"
+            android:key="about_preference">
+            <intent android:targetClass="com.example.rishonlovesanimals.AboutActivity"
+                android:targetPackage="com.example.rishonlovesanimals"
+                android:action="android.intent.action.VIEW">
+            </intent>
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/bug_report"
+            android:summary="@string/app_bug"
+            android:key="bug_report_preference">
+            <intent android:action="android.intent.action.VIEW"
+                android:targetPackage="com.example.rishonlovesanimals"
+                android:targetClass="com.example.rishonlovesanimals.BugReportActivity"/>
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/suggestions"
+            android:summary="@string/app_suggestions"
+            android:key="suggestion_preference">
+            <intent android:action="android.intent.action.VIEW"
+                android:targetPackage="com.example.rishonlovesanimals"
+                android:targetClass="com.example.rishonlovesanimals.SuggestionActivity"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>

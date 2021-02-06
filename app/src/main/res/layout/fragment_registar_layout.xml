@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@mipmap/rishon_loves_animals_logo">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/signUp"
+        android:textSize="50sp"
+        android:gravity="center"
+        android:id="@+id/signUpTextView"
+        android:fontFamily="@font/delius_swash_caps"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:shadowRadius="8"
+        android:shadowDy="10"
+        android:shadowDx="10"
+        android:shadowColor="#000"
+        android:textColor="@color/colorAccent"
+        >
+
+
+    </TextView>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_register_layout_TextInputLayout0"
+        android:layout_below="@+id/signUpTextView"
+        android:layout_marginTop="30dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            android:gravity="center"
+            android:fontFamily="@font/delius_swash_caps"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:id="@+id/fragment_register_email"
+
+            android:inputType="textEmailAddress">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_register_layout_TextInputLayout0">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:gravity="center"
+            android:fontFamily="@font/delius_swash_caps"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:id="@+id/fragment_register_password"
+            android:inputType="textPassword"
+            >
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+</RelativeLayout>

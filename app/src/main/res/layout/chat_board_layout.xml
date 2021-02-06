@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightBlue">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/send_message_area"
+        android:layout_marginTop="10dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <RelativeLayout
+        android:id="@+id/send_message_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/text_to_send"
+        android:elevation="4dp"
+        android:padding="5dp"
+
+        >
+
+        <EditText
+            android:id="@+id/txt_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/attach_file_btn"
+            android:hint="@string/type_hear"
+            android:padding="7dp"
+            android:textColor="@color/black"
+            android:inputType="text"
+            android:autofillHints="">
+
+        </EditText>
+
+
+        <ImageButton
+            android:id="@+id/attach_file_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:layout_toStartOf="@id/send_msg_btn"
+            android:background="@drawable/ic_baseline_attach_file_24"
+            android:contentDescription="@string/press_to_file">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/send_msg_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="7dp"
+            android:background="@drawable/ic_baseline_send_24"
+            android:contentDescription="@string/press_to_text">
+
+        </ImageButton>
+    </RelativeLayout>
+</RelativeLayout>

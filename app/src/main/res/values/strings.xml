@@ -1,0 +1,219 @@
+<resources>
+    <string name="app_name">Pound Manager</string>
+    <string name="animal_pic">Animal Picture</string>
+    <string name="animal_picture">animal picture</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="new_member">Add new member</string>
+    <string name="animal_name">Animal name</string>
+    <string name="animal_age">Animal age</string>
+    <string name="animal_history">Animal History</string>
+    <string name="animal_medical">Animal medical</string>
+    <string name="animal_kind">Animal kind</string>
+    <string name="animal_breed">Animal breed</string>
+    <string name="animal_note">Animal note</string>
+    <string name="add_new_animal">Add new Animal</string>
+    <string name="gallery">Upload photo from gallery</string>
+
+    <string-array name="list_entries">
+        <item>Show 1–2 cards</item>
+        <item>Show 2–3 cards</item>
+        <item>Show 3–4 cards</item>
+        <item>Show 4–5 cards</item>
+    </string-array>
+
+    <string-array name="list_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string name="search_animal">Search Animal</string>
+    <string name="membership">Membership</string>
+    <string name="everyThingElse">Every thing else</string>
+    <string name="add_new_member">Add new member</string>
+    <string name="login">Login</string>
+    <string name="signUp">Sign up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="default_notification_channel_id" translatable="false">default_channel</string>
+
+    <string-array name="position">
+        <item>volunteer</item>
+        <item>admin</item>
+    </string-array>
+
+    <string-array name="animals_kind">
+        <item>Dog</item>
+        <item>Cat</item>
+    </string-array>
+
+    <string-array name="cats_breed">
+        <item>British Shorthair</item>
+        <item>Persian Cat</item>
+        <item>Main Coon</item>
+        <item>Siamese Cat</item>
+        <item>American Shorthair</item>
+        <item>Ragdoll</item>
+        <item>Sphynx Cat</item>
+        <item>Bengal Cat</item>
+        <item>Abyssinian Cat</item>
+        <item>Exotic Shorthair</item>
+        <item>Scottish Fold</item>
+        <item>Birman</item>
+        <item>Russian Blue</item>
+        <item>Norwegian Forest Cat</item>
+        <item>Burmese Cat</item>
+        <item>Siberian Cat</item>
+        <item>Japanese Bobtail</item>
+        <item>Bombay Cat</item>
+        <item>Turkish Angora</item>
+        <item>Devon Rex</item>
+        <item>Himalayan Cat</item>
+        <item>Manx Cat</item>
+        <item>Balinese Cat</item>
+        <item>Chartreux</item>
+        <item>Egyptian Mau</item>
+        <item>American Curl</item>
+        <item>Cornish Rex</item>
+        <item>American Bobtail</item>
+        <item>Oriental Shorthair</item>
+        <item>Munchkin Cat</item>
+        <item>Savanna Cat</item>
+        <item>Ocicat</item>
+        <item>Ragamuffin cat</item>
+        <item>Singapura cat</item>
+        <item>Korat</item>
+        <item>Selkirk Rex</item>
+        <item>Tonkinese Cat</item>
+        <item>Turkish Van</item>
+        <item>American Wirehair</item>
+        <item>Somali Cat</item>
+        <item>Havana Brown</item>
+        <item>LaPerm</item>
+        <item>Peterbald</item>
+        <item>Pixie-bob</item>
+        <item>Toyger</item>
+        <item>Burmilla</item>
+        <item>SnowShoe Cat</item>
+        <item>Oriental LongHair</item>
+        <item>Cymric</item>
+        <item>Donskoy</item>
+        <item>Chausie</item>
+
+
+
+
+    </string-array>
+    <string-array name="dogs_breed">
+        <item>German Shepherd</item>
+        <item>Mixed</item>
+        <item>UnKnown</item>
+        <item>Bulldog</item>
+        <item>Poodle</item>
+        <item>Labrador</item>
+        <item>Golden Retriever</item>
+        <item>Beagle</item>
+        <item>Dachshund</item>
+        <item>Siberian Husky</item>
+        <item>Rottweiler</item>
+        <item>Great Dane</item>
+        <item>Doberman</item>
+        <item>Pomeranian</item>
+        <item>GreyHound</item>
+        <item>Shih Tzu</item>
+        <item>Maltese</item>
+        <item>Cavalier King Charles Spaniel</item>
+        <item>Border Collie</item>
+        <item>NewFoundLand</item>
+        <item>Bichon Frise</item>
+        <item>Irish Setter</item>
+        <item>Alaskan Malamute</item>
+        <item>Basset Hound</item>
+        <item>St. Bernard</item>
+        <item>Dalmatian</item>
+        <item>Chow Chow</item>
+        <item>English Springer Spaniel</item>
+        <item>Bull Terrier</item>
+        <item>American Stanffordshire Terrier</item>
+        <item>Irish Wolfhound</item>
+        <item>Havanese dog</item>
+        <item>German Shorthaired Pointer</item>
+        <item>Sheltie</item>
+        <item>Pointer</item>
+        <item>Afghan Hound</item>
+        <item>American Eskimo Dog</item>
+        <item>BloodHound</item>
+        <item>Italian Greyhound</item>
+        <item>Shiba Inu</item>
+        <item>American Pit Bull Terrier</item>
+        <item>Cane Corso</item>
+        <item>Samoyed</item>
+        <item>English Cocker Spaniel</item>
+        <item>Jack Russell Terrier</item>
+        <item>Sarabi dog</item>
+        <item>Shar Pei</item>
+        <item>Miniature Pinscher</item>
+        <item>Labradoodle</item>
+        <item>Toy Poodle</item>
+    </string-array>
+    <string name="name">Name</string>
+    <string name="Position">position</string>
+    <string name="age">Age</string>
+    <string name="arriving">Arriving</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="add_task">Add Task</string>
+    <string name="pick_time">Pick Time</string>
+    <string name="pick_date">Pick Date</string>
+    <string name="set_alarm">Set Remaider</string>
+    <string name="only_admin">Only an admin can perform this operation</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="name_required">Name must be provided</string>
+    <string name="task_done">Done with task</string>
+    <string name="task_not_done">Not done with task</string>
+    <string name="item_deleted">Item deleted</string>
+    <string name="are_you_sure">Are you sure you want to delete this?</string>
+    <string name="confirm_del">Confirm deletion</string>
+    <string name="deletion_cancel">Deletion canceled</string>
+    <string name="clicked_message">Clicked on a message</string>
+    <string name="dc">Disconnect</string>
+    <string name="arrivals">Arrivals</string>
+    <string name="arriving_list">Arrival List</string>
+    <string name="dev_by">Developed by Hanan Dorman</string>
+    <string name="about">About</string>
+    <string name="whats_new">Whats New</string>
+    <string name="bug_report">Bug report</string>
+    <string name="type_hear">Type your message here</string>
+    <string name="press_to_file">Press to send file</string>
+    <string name="press_to_image">Press to send image</string>
+    <string name="press_to_text">Press to send text</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="chat_enable">Enable/Disable chat</string>
+    <string name="show_on_screen">Show on Screen</string>
+    <string name="looks">Looks and feel</string>
+    <string name="number_of_cards">set a fixed number of cards on screen</string>
+    <string name="notif_chat">Notification and Chat</string>
+    <string name="allow_notif">Allow notifications</string>
+    <string name="notif_uncheck">unChecking the checkbox will stop all notifications</string>
+    <string name="the_app">The App</string>
+    <string name="app_about">about the app,its goal and how it works</string>
+    <string name="app_bug">Allows you to report a bug to the developer</string>
+    <string name="app_new">after every update a summery of new features and fixes can be found here</string>
+    <string name="app_suggestions">suggest to the developer features that you would like him to add</string>
+    <string name="sound_dis">sound_disabled</string>
+    <string name="sound_en">sound enabled</string>
+    <string name="dis_en_sound">Disable/Enable sound</string>
+    <string name="config">Configuration</string>
+    <string name="photo_requierd">Photo required</string>
+    <string name="photo_must">Must provide a photo of the animal</string>
+    <string name="about_txt">This Application is designed to help                       the volunteering efforts at Rishon Loves Animals                       to help adopt and take care of every animal present                       as efficiently as possible                       this app is not open source and isn\'t available to the public.                       please do not share the app outside of Rishon loves animals.                       this app was donated to Rishon loves Animals                       written by Hanan Dorfman</string>
+    <string name="new_member_name">New Member Name</string>
+    <string name="new_member_age">New Member Age</string>
+    <string name="new_member_picture">New Member Picture</string>
+    <string name="search_breed">Search by breed</string>
+    <string name="search_name">Search by Name</string>
+    <string name="save_changes">Save changes</string>
+    <string name="not_arriving">Not arriving</string>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@drawable/background_color">
+
+    <RadioGroup
+        android:id="@+id/search_radio_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/search_by_breed_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/delius_swash_caps"
+            android:text="@string/search_breed"
+            android:textSize="20sp">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/search_by_name_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:checked="true"
+            android:fontFamily="@font/delius_swash_caps"
+            android:text="@string/search_name"
+            android:textSize="20sp">
+
+        </RadioButton>
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_radio_btn">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_animal_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/delius_swash_caps"
+            android:gravity="center"
+            android:hint="@string/animal_name"
+            android:textColor="@color/colorPrimaryDark">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+</RelativeLayout>

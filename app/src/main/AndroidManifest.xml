@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.rishonlovesanimals">
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/rishon_loves_animals"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/rishon_loves_animals"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="Animals.AnimalProfile"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".NewAnimalActivity"
+            android:theme="@style/AppTheme1"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".ProfileViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"/>
+        <activity android:name=".SettingsActivity"/>
+        <activity android:name="Animals.AnimalInfo"/>
+        <activity android:name=".ProfileActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".ProfileEditActivity"
+            android:theme="@style/AppTheme1"/>
+        <activity android:name=".NewMemberActivity"
+            android:theme="@style/AppTheme1">
+        </activity>
+        <activity android:name="Authentication.FirstScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="Authentication.Login"/>
+        <activity android:name="Authentication.Registration"/>
+        <activity android:name=".AttendanceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"/>
+        <activity android:name=".AboutActivity"/>
+        <activity android:name=".BugReportActivity"/>
+        <activity android:name=".SuggestionActivity"/>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.rishonlovesanimals.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <!-- ressource file to create -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_dir">
+            </meta-data>
+        </provider>
+        <service android:name="Services.CountToTask"
+           />
+        <service android:name="Services.DownloadTasksService"/>
+        <service android:name="Services.DownloadUsersService"/>
+        <service android:name="Services.DownloadDogsInformation"/>
+        
+        <service
+            android:name="Services.MessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_baseline_notifications_24"
+
+            />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent"
+            />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id"
+            />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <receiver android:name="BroadcastReceiver.AlarmReceiver"
+            android:enabled="true"
+            android:process=":remote"
+          />
+        <service android:name="Services.JobChatBoardMessagingService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <receiver android:name="BroadcastReceiver.BatteryLevelReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

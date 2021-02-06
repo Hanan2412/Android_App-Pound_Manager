@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_color">
+
+    <ImageView
+        android:id="@+id/animal_pic"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@mipmap/rishon_loves_animals_logo"
+        android:contentDescription="@string/animal_pic"
+        android:scaleType="fitXY">
+
+    </ImageView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/animal_pic"
+        android:layout_marginTop="20dp"
+        >
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@android:id/list"
+            >
+
+        </ListView>
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/background_color">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/animalViewPic"
+        android:padding="20dp"
+        android:src="@drawable/ic_launcher_foreground"
+        android:contentDescription="@string/animal_picture"
+        >
+    </ImageView>
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/animal_name"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_below="@id/animalViewPic"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp">
+
+    </TextView>
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/animal_age"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_alignBaseline="@+id/animal_name"
+        android:layout_toEndOf="@+id/animal_name"
+        android:layout_marginStart="20dp">
+
+    </TextView>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/animal_name"
+    android:id="@+id/animalScrollView">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/animal_type"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        >
+
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/animal_type"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/animal_history"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/animal_history"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/animal_medical"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+</RelativeLayout>
+</ScrollView>
+</RelativeLayout>

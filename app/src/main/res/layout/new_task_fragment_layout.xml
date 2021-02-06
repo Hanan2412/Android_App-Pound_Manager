@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/newTaskLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/new_task_fragment_layout_taskName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="task name"
+            android:textSize="30sp">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/PickDateTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/newTaskLayout"
+        android:gravity="center"
+        android:text="@string/pick_date"
+        android:textSize="30sp">
+
+    </TextView>
+
+    <DatePicker
+        android:id="@+id/taskDatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PickDateTv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+
+        >
+
+    </DatePicker>
+
+    <TextView
+        android:id="@+id/pick_Time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/taskDatePicker"
+        android:gravity="center"
+        android:text="@string/pick_time"
+        android:textSize="30sp"
+        >
+
+    </TextView>
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/taskTimePicker"
+        android:layout_below="@+id/pick_Time"
+        android:layout_marginTop="20dp"
+        
+        >
+
+    </TimePicker>
+
+</RelativeLayout>
+
+</ScrollView>
