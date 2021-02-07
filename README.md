@@ -14,6 +14,9 @@ the volenteer can basically only control what effects them directly and cannot a
 -the arriving button indicates that the connected user will come to work the following day(or won't if unselected)
 -the task tab shows what tasks the user should perform and the system will notify the user few minutes before the task is due to begin
 -the user list tab shows all users connected(assuming all users are the workers of the pound). an admin user can add tasks for each user while a volenteer user can only view each users task
+-no new user can add themself to the app. only an admin can add users so no register button is avaliable in the first screen(altho the button exists in the code, it is set as View.Gone so it's invisable)
+-the app updates automatically, so whenever a new animal is being added to the system. all the app instances will download automatically from Firebase the new data
+-the app doesn't run in the background, there is no need for that so it wasn't implemented
 
 This application is to present my coding skills and know-how. it is not to be published.
 made by Hanan Dorfman
