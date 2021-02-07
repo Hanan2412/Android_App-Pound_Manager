@@ -14,6 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_color">
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:indeterminate="true"
+            android:layout_centerInParent="true"
+            style="@android:style/Widget.ProgressBar"
+            android:visibility="invisible"
+            android:progress="0"
+            />
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="250dp"

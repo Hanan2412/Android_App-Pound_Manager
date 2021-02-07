@@ -4,11 +4,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.rishonlovesanimals.R;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 
@@ -43,6 +45,7 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogsViewHolder
     public class DogsViewHolder extends RecyclerView.ViewHolder {
         TextView name,age,type;
         ImageView dogPic;
+        ProgressBar progressBar;
 
         public DogsViewHolder(View itemView){
             super(itemView);
@@ -51,6 +54,7 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogsViewHolder
             age = itemView.findViewById(R.id.cardAnimalAge);
             type = itemView.findViewById(R.id.cardAnimalType);
             dogPic = itemView.findViewById(R.id.cardAnimalPicture);
+            progressBar = itemView.findViewById(R.id.progressBar1);
             //------------------------------------------------//
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -79,16 +83,27 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogsViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DogsAdapter.DogsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final DogsAdapter.DogsViewHolder holder, int position) {
         //updates the values in cardView
         Dog dog = dogsList.get(position);
         holder.name.setText(dog.getName());
         holder.age.setText(dog.getAge());
         holder.type.setText(dog.getKind());
+        holder.progressBar.setVisibility(View.VISIBLE);
         ///////////////////////////////////////
         //here should be a server download of all the data
         System.out.println("this is path: " + dog.getImageUri());
-        Picasso.get().load(dog.getImageUri()).into(holder.dogPic);
+        Picasso.get().load(dog.getImageUri()).into(holder.dogPic, new Callback() {
+            @Override
+            public void onSuccess() {
+                holder.progressBar.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onError(Exception e) {
+
+            }
+        });
         //holder.dogPic.setRotation(90);
         holder.dogPic.setScaleType(ImageView.ScaleType.FIT_XY);
 
