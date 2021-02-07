@@ -29,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -75,12 +76,14 @@ public class NewAnimalActivity extends AppCompatActivity {
     private String uploaderUId;
     private boolean photoAdded = false;
     private ProgressBar progressBar;
+
+
     private ArrayAdapter<CharSequence> breedSpinnerAdapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_animal_layout);
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBar1);
         name = findViewById(R.id.new_animal_name_et);
         age = findViewById(R.id.new_animal_age_et);
         history = findViewById(R.id.new_animal_History_et);
@@ -247,10 +250,7 @@ public class NewAnimalActivity extends AppCompatActivity {
                 //opens the gallery
                 Intent gallery = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.INTERNAL_CONTENT_URI);
                 startActivityForResult(gallery,SELECT_IMAGE);
-                /*Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent,"select picture"),SELECT_IMAGE);*/
+
             }
         }
         return super.onOptionsItemSelected(item);
@@ -266,23 +266,11 @@ public class NewAnimalActivity extends AppCompatActivity {
             Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
             bitmap = rotateImage(bitmap);
             photoAdded = true;
-           /* Matrix matrix = new Matrix();
-            matrix.postRotate(90);
-            Bitmap rotatedBitmap = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),matrix,true);
-            imageView.setImageBitmap(rotatedBitmap);
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);*/
-
-
-
-
-
-           // bitmap = Bitmap.createScaledBitmap(bitmap,120,120,false);
             if(bitmap!=null)
             {
                 imageView.setImageBitmap(bitmap);
             }
-            //imageView.setRotation(90);
-            //imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+
         }
         if(requestCode == SELECT_IMAGE && resultCode == RESULT_OK)
         {
@@ -293,19 +281,7 @@ public class NewAnimalActivity extends AppCompatActivity {
                     photoAdded = true;
                 }
         }
-        /*if(requestCode == SELECT_IMAGE){
-            if(resultCode == RESULT_OK)
-            {
-                if(data!=null){
-                    if(data.getData()!=null) {
-                        imageUri = data.getData().toString();
-                        imageView.setImageURI(data.getData());
-                    }
-                }
-            }
-            else
-                Toast.makeText(this,"requires permission",Toast.LENGTH_SHORT).show();
-        }*/
+
     }
     private boolean AskPermission()
     {
@@ -403,34 +379,30 @@ public class NewAnimalActivity extends AppCompatActivity {
         bitmap = Bitmap.createScaledBitmap(bitmap,500,480,false);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG,70,out);
-
-
-
         //bitmap = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
         StorageTask<UploadTask.TaskSnapshot> uploadTask;
         uploadTask = pictureReference.putStream(new ByteArrayInputStream(out.toByteArray()));
         final int length = out.toByteArray().length;
         //uploadTask = pictureReference.putFile(ImageUri);
-       /* uploadTask.addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+        uploadTask.addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
                 progressBar.setVisibility(View.VISIBLE);
                 long bytesTransferred = snapshot.getBytesTransferred();
-                int totalBytes = length;//snapshot.getTotalByteCount();
-                long progress = (bytesTransferred)/(totalBytes) * 100;
+                long progress = (bytesTransferred)/(length) * 100;
                 progressBar.setProgress((int) progress);
                 if(progress == 100)
                     progressBar.setVisibility(View.GONE);
+
             }
-        });*/
-        uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+        }).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
             @Override
             public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                if(task.isSuccessful())
-                {
+                if(!task.isSuccessful())
+                /*{
                     Toast.makeText(NewAnimalActivity.this,"Started Uploading to server",Toast.LENGTH_SHORT).show();
                 }
-                else
+                else*/
                 {
                     Toast.makeText(NewAnimalActivity.this,"There was a problem uploading the data,try again later",Toast.LENGTH_SHORT).show();
                     if(task.getException()!=null)
@@ -453,6 +425,7 @@ public class NewAnimalActivity extends AppCompatActivity {
 
                     }
                     Toast.makeText(NewAnimalActivity.this,"Upload finished successfully",Toast.LENGTH_SHORT).show();
+                    clearAll();
                 }
 
             }
@@ -489,5 +462,16 @@ public class NewAnimalActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return null;
+    }
+
+    private void clearAll()
+    {
+        age.setText("");
+        medical.setText("");
+        history.setText("");
+        note.setText("");
+        name.setText("");
+        imageView.setImageResource(R.drawable.ic_launcher_foreground);
+        breed.setText("");
     }
 }

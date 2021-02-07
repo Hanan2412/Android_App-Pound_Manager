@@ -565,11 +565,13 @@ public class TabFragment extends Fragment {
                                     break;
                                 }
                                 case "cardsNumber": {
-                                    TabFragment.this.showOnScreen = intent.getIntExtra("cardsNumber", 2);
+                                    TabFragment.this.showOnScreen = intent.getIntExtra("cardsNumber", 0);
                                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users/" + Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid() + "/userSettings/");
                                     HashMap<String, Object> map = new HashMap<>();
                                     map.put("cardNumber", showOnScreen);
                                     reference.updateChildren(map);
+                                    /*if(adapter!=null)
+                                        adapter.changeCardSize(TabFragment.this.showOnScreen);*/
                                     break;
                                 }
                                 case "notification": {

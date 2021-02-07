@@ -8,6 +8,7 @@
     app:cardUseCompatPadding="true"
     android:elevation="0dp"
     app:cardElevation="0dp"
+    android:id="@+id/animalCard"
     >
     <RelativeLayout
         android:layout_width="match_parent"

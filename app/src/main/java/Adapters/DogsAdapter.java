@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.rishonlovesanimals.R;
 import com.squareup.picasso.Picasso;
@@ -19,6 +20,7 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogsViewHolder
 
     private DogListener listener;
     private ArrayList<Dog> dogsList;
+    private CardView cardView;
 
     public DogsAdapter(ArrayList<Dog> dogsList){this.dogsList = dogsList;}
     public DogsAdapter() {
@@ -72,6 +74,7 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogsViewHolder
     @Override
     public DogsAdapter.DogsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout,parent,false);
+        cardView = view.findViewById(R.id.animalCard);
         return new DogsViewHolder(view);
     }
 
@@ -102,7 +105,35 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogsViewHolder
         return super.getItemViewType(position);
     }
 
-
-
+    /*public void changeCardSize(int num)
+    {
+        RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) cardView.getLayoutParams();
+        if(layoutParams!=null)
+        switch(num){
+            case 1:{
+                layoutParams.height = 500;
+                layoutParams.width = cardView.getWidth();
+                break;
+            }
+            case 2:{
+                layoutParams.height = 300;
+                layoutParams.width = cardView.getWidth();
+                break;
+            }
+            case 3:{
+                layoutParams.height = 150;
+                layoutParams.width = cardView.getWidth();
+                break;
+            }
+            case 4:{
+                layoutParams.height = 75;
+                layoutParams.width = cardView.getWidth();
+                break;
+            }
+            default:
+                System.out.println("error in changeCardSize - DogsAdapter");
+        }
+    }
+*/
 
 }

@@ -279,7 +279,7 @@ public class MainActivity extends AppCompatActivity implements TabFragment.Fragm
                 key = iterator.next();
                 switch (key) {
                     case "list_preference": {
-                        LocalBroadcastManager.getInstance(MainActivity.this).sendBroadcast(new Intent("Settings1").putExtra("cardsNumber", (String) preferenceMap.get(key)));
+                        LocalBroadcastManager.getInstance(MainActivity.this).sendBroadcast(new Intent("Settings1").putExtra("cardsNumber", Integer.valueOf((String)preferenceMap.get(key))));
                         break;
                     }
                     case "autoUpdate": {
