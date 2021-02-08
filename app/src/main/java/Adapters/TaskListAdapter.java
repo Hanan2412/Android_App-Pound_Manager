@@ -32,13 +32,15 @@ import java.util.HashMap;
 import Services.DownloadTasksService;
 import Tasks.Task;
 
-public class TaskListAdapter extends BaseAdapter implements View.OnClickListener {
+public class TaskListAdapter extends BaseAdapter implements View.OnClickListener,Runnable {
 
     private ArrayList<Task> tasks;
     private DatabaseReference database;
     private HashMap<String,Object> checked;
     private BroadcastReceiver taskListFromService;
     private boolean profile = false;
+    private boolean autoDone = false;
+
 
     public interface DoneWithTask{
         void onDoneWithTask(int position);
@@ -125,5 +127,28 @@ public class TaskListAdapter extends BaseAdapter implements View.OnClickListener
         database.updateChildren(checked);
     }
 
-
+    public void autoDone(boolean done){
+        if(done)
+        {
+            autoDone = true;
+            Thread thread = new Thread();
+            thread.setName("autoDoneWithTask");
+            thread.start();
+        }
+        else autoDone = false;
+    }
+    @Override
+    public void run() {
+        while(autoDone)
+        {
+            for(Task task : tasks)
+            {
+                String time = task.getTaskTime();
+                long currentTime = System.currentTimeMillis() + 5*60*1000;
+                long time1 = Long.parseLong(time) ;
+                if(currentTime >= time1)
+                    task.setDone(true);
+            }
+        }
+    }
 }

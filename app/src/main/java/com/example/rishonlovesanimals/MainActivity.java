@@ -213,8 +213,6 @@ public class MainActivity extends AppCompatActivity implements TabFragment.Fragm
                         String name = ds.child("name").getValue(String.class);
                         TextView header_name = headerView.findViewById(R.id.header_name);
                         header_name.setText(name);
-                        /*TextView header_age = headerView.findViewById(R.id.header_age);
-                        header_age.setText(age);*/
                         TextView header_position = headerView.findViewById(R.id.header_position);
                         header_position.setText(ds.child("position").getValue(String.class));
                         profile.setProfile_position(ds.child("position").getValue(String.class));

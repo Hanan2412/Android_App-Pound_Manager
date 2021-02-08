@@ -81,4 +81,5 @@
     <string name="search_name">חפש לפי שם</string>
     <string name="save_changes">שמור שינויים</string>
     <string name="not_arriving">לא מגיע</string>
+    <string name="about_txt">יעוד האפליקצייה</string>
 </resources>

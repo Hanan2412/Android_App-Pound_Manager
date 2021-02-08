@@ -2,13 +2,14 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory android:title="@string/looks">
+    <PreferenceCategory android:title="Notifications">
         <ListPreference
             android:title="@string/show_on_screen"
             android:summary="@string/number_of_cards"
             android:key="list_preference"
             android:entryValues="@array/list_values"
-            android:entries="@array/list_entries"/>
+            android:entries="@array/list_entries"
+            app:isPreferenceVisible="false"/>
 
         <SwitchPreference
             android:title="Notifications"
@@ -32,7 +33,8 @@
             android:title="Don't show in user List"
             android:key="showInList"
             android:summaryOff="You will appear in the user List for everyone to see"
-            android:summaryOn="You wont appear in the user List for everyone to see(still visible to admin)">
+            android:summaryOn="You wont appear in the user List for everyone to see(still visible to admin)"
+            app:isPreferenceVisible="false">
         </SwitchPreference>
         <CheckBoxPreference
             android:title="Mark tasks as done automatically"

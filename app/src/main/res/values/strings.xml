@@ -23,10 +23,10 @@
     </string-array>
 
     <string-array name="list_values">
-        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
     </string-array>
     <string name="search_animal">Search Animal</string>
     <string name="membership">Membership</string>

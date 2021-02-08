@@ -83,6 +83,7 @@ public class TabFragment extends Fragment {
     private BroadcastReceiver searchReceiver;
     private Intent dogsInfoService;
 
+    private TaskListAdapter taskListAdapter;
     // private AnimalProfileListAdapter animalProfileListAdapter;
 
     private ArrayList<Task> taskArrayList;
@@ -340,7 +341,6 @@ public class TabFragment extends Fragment {
                                                 @Override
                                                 public void onAlarm() {
 
-                                                    Toast.makeText(getContext(), "super gay was achieved", Toast.LENGTH_LONG).show();
                                                 }
                                             }, null);
                                             alarmManager.setExact(AlarmManager.RTC_WAKEUP, time, broadcastPendingIntent);
@@ -380,7 +380,7 @@ public class TabFragment extends Fragment {
                         }
                     }
                 }
-                final TaskListAdapter taskListAdapter = new TaskListAdapter(taskList);
+                taskListAdapter = new TaskListAdapter(taskList);
                 listView.setAdapter(taskListAdapter);
                 taskListAdapter.setListener(new TaskListAdapter.DoneWithTask() {
                     @Override
@@ -391,7 +391,6 @@ public class TabFragment extends Fragment {
                         taskList.remove(position);
                         taskArrayList.remove(position);
                         taskListAdapter.notifyDataSetChanged();
-                        Toast.makeText(requireContext(), "should delete the task and update the list", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -545,7 +544,6 @@ public class TabFragment extends Fragment {
                                             TabFragment.this.update = true;
                                         }
                                     }
-                                    System.out.println("onReceive: autoUpdate" + TabFragment.this.update);
                                     break;
                                 }
                                 case "showInList": {
@@ -562,6 +560,7 @@ public class TabFragment extends Fragment {
                                     HashMap<String, Object> map = new HashMap<>();
                                     map.put("autoDone", autoDoneWithTask);
                                     reference.updateChildren(map);
+                                    taskListAdapter.autoDone(TabFragment.this.autoDoneWithTask);
                                     break;
                                 }
                                 case "cardsNumber": {
@@ -674,8 +673,10 @@ public class TabFragment extends Fragment {
                     //noinspection unchecked
                     settingsMap = (HashMap<String, Object>) snapshot.getValue();
                     if (settingsMap!=null) {
-                        if (settingsMap.containsKey("autoDone"))
+                        if (settingsMap.containsKey("autoDone")) {
                             TabFragment.this.autoDoneWithTask = (boolean) settingsMap.get("autoDone");
+
+                        }
                         if(settingsMap.containsKey("cardNumber"))
                             TabFragment.this.showOnScreen = Integer.parseInt(String.valueOf(settingsMap.get("cardNumber")));
                         if(settingsMap.containsKey("showMe"))

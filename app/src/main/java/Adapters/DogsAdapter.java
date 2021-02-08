@@ -90,8 +90,6 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogsViewHolder
         holder.age.setText(dog.getAge());
         holder.type.setText(dog.getKind());
         holder.progressBar.setVisibility(View.VISIBLE);
-        ///////////////////////////////////////
-        //here should be a server download of all the data
         System.out.println("this is path: " + dog.getImageUri());
         Picasso.get().load(dog.getImageUri()).into(holder.dogPic, new Callback() {
             @Override
@@ -104,10 +102,7 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogsViewHolder
 
             }
         });
-        //holder.dogPic.setRotation(90);
         holder.dogPic.setScaleType(ImageView.ScaleType.FIT_XY);
-
-        //holder.dogPic.setImageURI(Uri.parse(dog.getImageUri()));
     }
 
     @Override
@@ -119,8 +114,8 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogsViewHolder
     public int getItemViewType(int position) {
         return super.getItemViewType(position);
     }
-
-    /*public void changeCardSize(int num)
+/*
+    public void changeCardSize(int num)
     {
         RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) cardView.getLayoutParams();
         if(layoutParams!=null)
