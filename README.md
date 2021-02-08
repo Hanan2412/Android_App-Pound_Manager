@@ -22,6 +22,7 @@ the volenteer can basically only control what effects them directly and cannot a
 
 -----------------------
 the application is not 100% ready and will be worked and refined in the future
+-----------------------
 This application is to present my coding skills and know-how. it is not to be published.
 made by Hanan Dorfman
 dorfmanhanan@gmail.com
