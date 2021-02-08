@@ -18,6 +18,10 @@ the volenteer can basically only control what effects them directly and cannot a
 -the app updates automatically, so whenever a new animal is being added to the system. all the app instances will download automatically from Firebase the new data
 -the app doesn't run in the background, there is no need for that so it wasn't implemented
 
+
+
+-----------------------
+the application is not 100% ready and will be worked and refined in the future
 This application is to present my coding skills and know-how. it is not to be published.
 made by Hanan Dorfman
 dorfmanhanan@gmail.com
