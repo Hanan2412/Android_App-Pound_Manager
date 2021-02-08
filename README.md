@@ -17,12 +17,7 @@ the volenteer can basically only control what effects them directly and cannot a
 -no new user can add themself to the app. only an admin can add users so no register button is avaliable in the first screen(altho the button exists in the code, it is set as View.Gone so it's invisable)
 -the app updates automatically, so whenever a new animal is being added to the system. all the app instances will download automatically from Firebase the new data
 -the app doesn't run in the background, there is no need for that so it wasn't implemented
-
-
-
------------------------
 the application is not 100% ready and will be worked and refined in the future
------------------------
 This application is to present my coding skills and know-how. it is not to be published.
 made by Hanan Dorfman
 dorfmanhanan@gmail.com
